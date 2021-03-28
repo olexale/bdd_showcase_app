@@ -4,9 +4,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+import 'package:golden_toolkit/golden_toolkit.dart';
+
 import './step/the_app_is_running.dart';
 import './step/i_see_text.dart';
 import './step/i_tap_icon.dart';
+import './step/the_app_is_rendered.dart';
+import './step/screenshot_verified.dart';
 
 void main() {
   group('Counter', () {
@@ -18,6 +22,10 @@ void main() {
       await theAppIsRunning(tester);
       await iTapIcon(tester, Icons.add);
       await iSeeText(tester, '1');
+    });
+    testGoldens('Primary swatch color is blue', (tester) async {
+      await theAppIsRendered(tester);
+      await screenshotVerified(tester, 'counter');
     });
   });
 }

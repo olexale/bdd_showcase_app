@@ -5,7 +5,7 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
   flutter:
@@ -15,9 +15,12 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  # these two lines added
+  # these lines added
   build_runner:
-  bdd_widget_test: ^0.6.1
+  bdd_widget_test: ^1.0.1
+  golden_toolkit: ^0.9.0
 
 flutter:
   uses-material-design: true
+  assets:
+    - images/
